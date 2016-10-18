@@ -1,0 +1,166 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<title>Design EXPO 2017</title>
+		
+		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="remse">
+				<article id="1">
+					<a href="javascript:void(0);" onclick="movePage(1);" class="right button"></a>
+					<div class="artWrapper">
+						<div class="avsnitt">
+							<h2>Hva</h2>
+							<p></p>
+						</div>
+						<div class="avsnitt">
+							<h2>Hvem</h2>
+							<p></p>
+						</div>
+						<div class="avsnitt">
+							<h2>Hvor</h2>
+							<p></p>
+						</div>
+						<div class="avsnitt">
+							<h2>Bleu</h2>
+							<p></p>
+						</div>
+					</div>
+				</article>
+				<article id="2">
+					<div class="dato">6.-10. Februar</div>
+					<div class="logo"></div>
+					<header>
+						<ul class="nav clearfix">
+							<li><a href="javascript:void(0);" onclick="movePage(0);">Om Design EXPO</a></li>
+							<li>&nbsp; | &nbsp;</li>
+							<li><a href="javascript:void(0);" onclick="movePage(2);">Kontakt</a></li>
+						</ul>
+					</header>
+				</article>
+				<article id="3">
+					<a href="javascript:void(0);" onclick="movePage(1);" class="left button"></a>
+					<div class="artWrapper">
+						<div class="avsnitt">
+							<img style="float:left;" src="img/leder.png">
+							<h2 style="float:left;">Leder</h2>
+							<p></p>
+						</div>
+						<div class="avsnitt">
+							<img style="float:left;" src="img/bedrift.png">
+							<h2 style="float:left;">Bedrift</h2>
+							<p></p>
+						</div>
+						<div class="avsnitt">
+							<img style="float:left;" src="img/arra.png">
+							<h2 style="float:left;">Arrangement</h2>
+							<p></p>
+						</div>
+						<div class="avsnitt">
+							<img style="float:left;" src="img/oko.png">
+							<h2 style="float:left;">Økonomi</h2>
+							<p></p>
+						</div>
+						<div class="avsnitt">
+							<img style="float:left;" src="img/pr.png">
+							<h2 style="float:left;">PR</h2>
+							<p></p>
+						</div>
+						<div class="avsnitt">
+							<img style="float:left;" src="img/peng.png">
+							<h2 style="float:left;">Hva er det her?</h2>
+							<p></p>
+						</div>
+					</div>
+				</article>
+				<div class="clear"></div>
+				<footer>2016 &copy; Designexpo.no. All rights reserved.</footer>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+
+			var remse = document.getElementById('remse');
+			var en = document.getElementById('1');
+			var to = document.getElementById('2');
+			var tre = document.getElementById('3');
+			
+			var currentPage = 1;
+			var pastMargin, currentMargin;
+			
+			var bredde = $(window).width();
+			var hoyde = $(window).height();
+			
+			
+			var marg = [0, -bredde, -2*bredde];
+			pastMargin = marg[currentMargin];
+
+			var rtime;
+			var timeout = false;
+			var delta = 200;
+			
+			en.style.height = hoyde + 'px';
+			to.style.height = hoyde + 'px';
+			tre.style.height = hoyde + 'px';
+			
+			$(window).resize(function() {
+				bredde = $(window).width();
+				hoyde = $(window).height();
+				
+				marg = [0, -bredde, -2*bredde];
+				
+				en.style.height = hoyde + 'px';
+				to.style.height = hoyde + 'px';
+				tre.style.height = hoyde + 'px';
+				
+				/*Checker for stop resize*/
+				rtime = new Date();
+				if (timeout === false) {
+					timeout = true;
+					setTimeout(resizeend, delta);
+				}
+			});
+			
+			$(document).keydown(function(e) {
+				switch(e.which) {
+					case 37: // left
+					if (currentPage > 0) {
+						currentPage--;
+						movePage(currentPage);
+					}
+					break;
+
+					case 39: // right
+					if (currentPage < 2) {
+						currentPage++;
+						movePage(currentPage);
+					}
+					break;
+
+					default: return; // exit this handler for other keys
+				}
+				e.preventDefault(); // prevent the default action (scroll / move caret)
+			});
+
+			function resizeend() {
+				if (new Date() - rtime < delta) {
+					setTimeout(resizeend, delta);
+				} else {
+					timeout = false;
+					movePage(currentPage);
+				}               
+			}
+			
+			function movePage(page) {
+				currentPage = page;
+				
+				$('#remse').animate(
+					{left: marg[page]}, 800, "swing");
+			}
+			
+		</script>
+	</body>
+</html>
