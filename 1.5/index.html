@@ -12,25 +12,25 @@
 				<article id="1">
 					<a href="javascript:void(0);" onclick="movePage(1);" class="right button"></a>
 					<div class="artWrapper">
-						<div class="avsnitt">
+						<div class="avsnitt omoss">
 							<h2>Hva</h2>
 							<p>
 								Design EXPO arrangeres én uke i året, og tilbyr blant annet foredrag, workshops, meetups og utstillinger. Begivenheten er sentrert rundt et tema – RESHAPE – som handler om designerens rolle i formingen av et samfunn med konstant omstillingsbehov.
 							</p>
 						</div>
-						<div class="avsnitt">
+						<div class="avsnitt omoss">
 							<h2>Hvor og når?</h2>
 							<p>
 								Design EXPO finner sted i Trondheim fra 2. til 10. februar. Dato for foredragskavalkaden EXPOtalks er satt til 9. februar. De ulike arrangementene vil utspille seg i varierte lokaler rundt om på NTNU Gløshaugen. 
 							</p>
 						</div>
-						<div class="avsnitt">
+						<div class="avsnitt omoss">
 							<h2>Hvem?</h2>
 							<p>
 								Design EXPO arrangeres av studenter ved sivilingeniørutdanningen Industriell Design på NTNU. Universitetets studenter vil under Design EXPO konvergere med ledende designere, akademikere og bedrifter.
 							</p>
 						</div>
-						<div class="avsnitt">
+						<div class="avsnitt omoss">
 							<h2>Hvorfor?</h2>
 							<p>
 								Design EXPO ble skapt for å rette et søkelys mot design som løsningsverktøy og instrument for samfunnsendring. Vi ønsker å ha fokus på aktuelle problemstillinger og utfordringer vi står overfor som samfunn og designbransje, og med det frembringe nyanserte innspill som kan inspirere både studenter og bransjen for øvrig. 
@@ -105,29 +105,34 @@
 			var bredde = $(window).width();
 			var hoyde = $(window).height();
 			
-			
 			var marg = [0, -bredde, -2*bredde];
 			pastMargin = marg[currentMargin];
 
 			var rtime;
 			var timeout = false;
 			var delta = 200;
-			
+
+
 			en.style.minHeight = hoyde + 'px';
 			to.style.minHeight = hoyde + 'px';
 			tre.style.minHeight = hoyde + 'px';
-			
+
+
 			$(window).resize(function() {
 				bredde = $(window).width();
 				hoyde = $(window).height();
 				
 				marg = [0, -bredde, -2*bredde];				
 
-
-
 				en.style.minHeight = hoyde + 'px';
 				to.style.minHeight = hoyde + 'px';
 				tre.style.minHeight = hoyde + 'px';
+
+				if(isScrollbar === true) {
+					en.style.width = bredde + 'px';
+					to.style.width = bredde + 'px';
+					tre.style.width = bredde + 'px';
+				}
 				
 				/*Checker for stop resize*/
 				rtime = new Date();
@@ -174,6 +179,14 @@
 					{left: marg[page]}, 800, "swing");
 			}
 			
+			function isScrollbar() {
+				// Check if body height is higher than window height :)
+			    if ($("#3").height() > $(window).height()) {
+			        return true;
+			    } else {
+			    	return false;
+			    }
+			}
 		</script>
 	</body>
 </html>

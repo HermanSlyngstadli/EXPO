@@ -112,10 +112,16 @@ header ul {
 	width:10%;
 	height:100%;
 	display:block;
-}
+}/*
 .kontaktinfo {
 	float:left;
 	width:340px;
+}*/
+.omoss {
+	height:auto;
+}
+.omoss p {
+	margin-top:10px;
 }
 
 /*FOOTER*/
