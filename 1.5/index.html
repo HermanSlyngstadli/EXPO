@@ -14,25 +14,36 @@
 					<div class="artWrapper">
 						<div class="avsnitt">
 							<h2>Hva</h2>
-							<p></p>
+							<p>
+								Design EXPO arrangeres én uke i året, og tilbyr blant annet foredrag, workshops, meetups og utstillinger. Begivenheten er sentrert rundt et tema – RESHAPE – som handler om designerens rolle i formingen av et samfunn med konstant omstillingsbehov.
+							</p>
 						</div>
 						<div class="avsnitt">
-							<h2>Hvem</h2>
-							<p></p>
+							<h2>Hvor og når?</h2>
+							<p>
+								Design EXPO finner sted i Trondheim fra 2. til 10. februar. Dato for foredragskavalkaden EXPOtalks er satt til 9. februar. De ulike arrangementene vil utspille seg i varierte lokaler rundt om på NTNU Gløshaugen. 
+							</p>
 						</div>
 						<div class="avsnitt">
-							<h2>Hvor</h2>
-							<p></p>
+							<h2>Hvem?</h2>
+							<p>
+								Design EXPO arrangeres av studenter ved sivilingeniørutdanningen Industriell Design på NTNU. Universitetets studenter vil under Design EXPO konvergere med ledende designere, akademikere og bedrifter.
+							</p>
 						</div>
 						<div class="avsnitt">
-							<h2>Bleu</h2>
-							<p></p>
+							<h2>Hvorfor?</h2>
+							<p>
+								Design EXPO ble skapt for å rette et søkelys mot design som løsningsverktøy og instrument for samfunnsendring. Vi ønsker å ha fokus på aktuelle problemstillinger og utfordringer vi står overfor som samfunn og designbransje, og med det frembringe nyanserte innspill som kan inspirere både studenter og bransjen for øvrig. 
+							</p>
+							<p>
+								Overskuddet fra Design EXPO går til en ekskursjon for 3. årstrinn ved Industriell Design. I 2017 går turen til Nepal, der studentene skal igangsette et arbeid for bedre søppelhåndtering i byen Pokhara. Prosjektet er i samarbeid med Tribhuvan University, og vil fortsette etter ekskursjonsgruppens involvering. 
+							</p>
 						</div>
 					</div>
 				</article>
 				<article id="2">
 					<div class="dato">6.-10. Februar</div>
-					<div class="logo"></div>
+					<img class="logo" src="img/logo-stor.png" />
 					<header>
 						<ul class="nav clearfix">
 							<li><a href="javascript:void(0);" onclick="movePage(0);">Om Design EXPO</a></li>
@@ -44,35 +55,35 @@
 				<article id="3">
 					<a href="javascript:void(0);" onclick="movePage(1);" class="left button"></a>
 					<div class="artWrapper">
-						<div class="avsnitt">
+						<div class="avsnitt kontaktinfo">
 							<img style="float:left;" src="img/leder.png">
-							<h2 style="float:left;">Leder</h2>
-							<p></p>
+							<h2>Leder</h2>
+							<p>Ida Christine Opsahl (<a href="mailto:">ida@designexpo.no</a>)</p>
 						</div>
-						<div class="avsnitt">
+						<div class="avsnitt kontaktinfo">
 							<img style="float:left;" src="img/bedrift.png">
-							<h2 style="float:left;">Bedrift</h2>
-							<p></p>
+							<h2>Bedriftskontakt</h2>
+							<p>Sven-Erik Kaiser (<a href="mailto:sven@designexpo.no">sven@designexpo.no</a>)</p>
 						</div>
-						<div class="avsnitt">
+						<div class="avsnitt kontaktinfo">
 							<img style="float:left;" src="img/arra.png">
-							<h2 style="float:left;">Arrangement</h2>
-							<p></p>
+							<h2>Arrangement</h2>
+							<p>Petter Mustvedt (<a href="mailto:petter@designexpo.no">petter@designexpo.no</a>)</p>
 						</div>
-						<div class="avsnitt">
+						<div class="avsnitt kontaktinfo">
 							<img style="float:left;" src="img/oko.png">
-							<h2 style="float:left;">Økonomi</h2>
-							<p></p>
+							<h2>Økonomi</h2>
+							<p>Harald Larssen Lønning (<a href="mailto:harald@designexpo.no">harald@designexpo.no</a>)</p>
 						</div>
-						<div class="avsnitt">
+						<div class="avsnitt kontaktinfo">
 							<img style="float:left;" src="img/pr.png">
-							<h2 style="float:left;">PR</h2>
-							<p></p>
+							<h2>Markedsføring</h2>
+							<p>Simen Kjendseth (<a href="mailto:simen@designexpo.no">simen@designexpo.no</a>)</p>
 						</div>
-						<div class="avsnitt">
+						<div class="avsnitt kontaktinfo">
 							<img style="float:left;" src="img/peng.png">
-							<h2 style="float:left;">Hva er det her?</h2>
-							<p></p>
+							<h2>Spons</h2>
+							<p>Sigurd Kalvik (<a href="mailto:sigurd@designexpo.no">sigurd@designexpo.no</a>)</p>
 						</div>
 					</div>
 				</article>
@@ -102,19 +113,21 @@
 			var timeout = false;
 			var delta = 200;
 			
-			en.style.height = hoyde + 'px';
-			to.style.height = hoyde + 'px';
-			tre.style.height = hoyde + 'px';
+			en.style.minHeight = hoyde + 'px';
+			to.style.minHeight = hoyde + 'px';
+			tre.style.minHeight = hoyde + 'px';
 			
 			$(window).resize(function() {
 				bredde = $(window).width();
 				hoyde = $(window).height();
 				
-				marg = [0, -bredde, -2*bredde];
-				
-				en.style.height = hoyde + 'px';
-				to.style.height = hoyde + 'px';
-				tre.style.height = hoyde + 'px';
+				marg = [0, -bredde, -2*bredde];				
+
+
+
+				en.style.minHeight = hoyde + 'px';
+				to.style.minHeight = hoyde + 'px';
+				tre.style.minHeight = hoyde + 'px';
 				
 				/*Checker for stop resize*/
 				rtime = new Date();
