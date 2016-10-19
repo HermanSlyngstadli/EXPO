@@ -1,17 +1,19 @@
 ﻿<!doctype html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<title>Design EXPO 2017</title>
 		
 		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
 		<div id="wrapper">
 			<div id="remse">
 				<article id="1">
-					<a href="javascript:void(0);" onclick="movePage(1);" class="right button"></a>
-					<div class="artWrapper">
+					<a href="javascript:void(0);" onclick="movePage(1);" class="rightChevron button"></a>
+					<div class="artWrapper right">
 						<div class="avsnitt omoss">
 							<h2>Hva</h2>
 							<p>
@@ -53,8 +55,8 @@
 					</header>
 				</article>
 				<article id="3">
-					<a href="javascript:void(0);" onclick="movePage(1);" class="left button"></a>
-					<div class="artWrapper">
+					<a href="javascript:void(0);" onclick="movePage(1);" class="leftChevron button"></a>
+					<div class="artWrapper left">
 						<div class="avsnitt kontaktinfo">
 							<img style="float:left;" src="img/leder.png">
 							<h2>Leder</h2>
@@ -93,46 +95,35 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script>
-
+		
 			var remse = document.getElementById('remse');
 			var en = document.getElementById('1');
 			var to = document.getElementById('2');
 			var tre = document.getElementById('3');
+
+			var wrappers = document.getElementsByClassName('artWrapper');
 			
 			var currentPage = 1;
-			var pastMargin, currentMargin;
 			
 			var bredde = $(window).width();
 			var hoyde = $(window).height();
 			
 			var marg = [0, -bredde, -2*bredde];
-			pastMargin = marg[currentMargin];
+			var scrollBarWidth = 17;
 
 			var rtime;
 			var timeout = false;
 			var delta = 200;
 
-
-			en.style.minHeight = hoyde + 'px';
-			to.style.minHeight = hoyde + 'px';
-			tre.style.minHeight = hoyde + 'px';
+			setHeight();
+			setMargin();
 
 
 			$(window).resize(function() {
-				bredde = $(window).width();
-				hoyde = $(window).height();
 				
-				marg = [0, -bredde, -2*bredde];				
-
-				en.style.minHeight = hoyde + 'px';
-				to.style.minHeight = hoyde + 'px';
-				tre.style.minHeight = hoyde + 'px';
-
-				if(isScrollbar === true) {
-					en.style.width = bredde + 'px';
-					to.style.width = bredde + 'px';
-					tre.style.width = bredde + 'px';
-				}
+				setWindowDimensions();
+				setMargin();	
+				setHeight();
 				
 				/*Checker for stop resize*/
 				rtime = new Date();
@@ -181,11 +172,31 @@
 			
 			function isScrollbar() {
 				// Check if body height is higher than window height :)
-			    if ($("#3").height() > $(window).height()) {
+			    if (800 > $(window).height()) {
 			        return true;
 			    } else {
 			    	return false;
 			    }
+			}
+
+			function setHeight() {		
+				en.style.minHeight = hoyde + 'px';
+				to.style.minHeight = hoyde + 'px';
+				tre.style.minHeight = hoyde + 'px';
+			}
+
+			function setWindowDimensions() {
+				bredde = $(window).width();
+				hoyde = $(window).height();
+			}
+
+			function setMargin() {
+				if ( isScrollbar() ) {
+					bredde -= 17;
+					marg = [0, -bredde, -2*bredde];
+				} else {
+					marg = [0, -bredde, -2*bredde];
+				}
 			}
 		</script>
 	</body>
