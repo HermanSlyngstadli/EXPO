@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -13,9 +13,9 @@
 			<div id="remse">
 				<article id="1">
 					<a href="javascript:void(0);" onclick="movePage(1);" class="rightChevron button"></a>
-					<div class="artWrapper right">
+					<div class="artWrapper right clearfix" style="margin-top:20px;">
 						<div class="avsnitt omoss">
-							<h2>Hva</h2>
+							<h2>Hva?</h2>
 							<p>
 								Design EXPO arrangeres én uke i året, og tilbyr blant annet foredrag, workshops, meetups og utstillinger. Begivenheten er sentrert rundt et tema – RESHAPE – som handler om designerens rolle i formingen av et samfunn med konstant omstillingsbehov.
 							</p>
@@ -39,24 +39,32 @@
 							</p>
 							<p>
 								Overskuddet fra Design EXPO går til en ekskursjon for 3. årstrinn ved Industriell Design. I 2017 går turen til Nepal, der studentene skal igangsette et arbeid for bedre søppelhåndtering i byen Pokhara. Prosjektet er i samarbeid med Tribhuvan University, og vil fortsette etter ekskursjonsgruppens involvering. 
-							</p>
+							</p>	
 						</div>
+						<br />
+						<br />
 					</div>
+					<footer>2016 &copy; Designexpo.no. All rights reserved.</footer>
 				</article>
-				<article id="2">
+				<article id="2" style="background:#fff;">
+					<a href="javascript:void(0);" onclick="movePage(0);" class="leftChevronMain button"></a>
+					<a href="javascript:void(0);" onclick="movePage(2);" class="rightChevronMain button"></a>
 					<div class="dato">6.-10. Februar</div>
 					<img class="logo" src="img/logo-stor.png" />
 					<header>
-						<ul class="nav clearfix">
-							<li><a href="javascript:void(0);" onclick="movePage(0);">Om Design EXPO</a></li>
-							<li>&nbsp; | &nbsp;</li>
-							<li><a href="javascript:void(0);" onclick="movePage(2);">Kontakt</a></li>
-						</ul>
+						<div class="navwrapper">
+							<ul class="nav clearfix">
+								<li><a href="javascript:void(0);" onclick="movePage(0);" style="color:#6fc1b9; width:100%; text-align: right;">Om Design EXPO</a></li>
+								<li style=" width:6%; text-align:center;">|</li>
+								<li><a href="javascript:void(0);" onclick="movePage(2);" style="color:#f9ad98; width:100%; text-align:left;">Kontakt</a></li>
+							</ul>
+						</div>
 					</header>
+					<footer>2016 &copy; Designexpo.no. All rights reserved.</footer>
 				</article>
 				<article id="3">
 					<a href="javascript:void(0);" onclick="movePage(1);" class="leftChevron button"></a>
-					<div class="artWrapper left">
+					<div class="artWrapper left clearfix">
 						<div class="avsnitt kontaktinfo">
 							<img style="float:left;" src="img/leder.png">
 							<h2>Leder</h2>
@@ -88,9 +96,9 @@
 							<p>Sigurd Kalvik (<a href="mailto:sigurd@designexpo.no">sigurd@designexpo.no</a>)</p>
 						</div>
 					</div>
+					<footer>2016 &copy; Designexpo.no. All rights reserved.</footer>
 				</article>
 				<div class="clear"></div>
-				<footer>2016 &copy; Designexpo.no. All rights reserved.</footer>
 			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -114,10 +122,10 @@
 			var rtime;
 			var timeout = false;
 			var delta = 200;
+			var t = 0;
 
 			setHeight();
 			setMargin();
-
 
 			$(window).resize(function() {
 				
