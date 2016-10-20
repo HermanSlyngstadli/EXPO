@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta charset="utf-8">
 		<title>Design EXPO 2017</title>
 		
 		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
@@ -11,9 +12,9 @@
 	<body>
 		<div id="wrapper">
 			<div id="remse">
-				<article id="1">
+				<article id="1" class="clearfix">
 					<a href="javascript:void(0);" onclick="movePage(1);" class="rightChevron button"></a>
-					<div class="artWrapper right clearfix" style="margin-top:20px;">
+					<div id="dritt" class="artWrapper right clearfix">
 						<div class="avsnitt omoss">
 							<h2>Hva?</h2>
 							<p>
@@ -46,7 +47,7 @@
 					</div>
 					<footer>2016 &copy; Designexpo.no. All rights reserved.</footer>
 				</article>
-				<article id="2" style="background:#fff;">
+				<article id="2" style="background:#fff;"  class="clearfix">
 					<a href="javascript:void(0);" onclick="movePage(0);" class="leftChevronMain button"></a>
 					<a href="javascript:void(0);" onclick="movePage(2);" class="rightChevronMain button"></a>
 					<div class="dato">6.-10. Februar</div>
@@ -62,7 +63,7 @@
 					</header>
 					<footer>2016 &copy; Designexpo.no. All rights reserved.</footer>
 				</article>
-				<article id="3">
+				<article id="3"  class="clearfix">
 					<a href="javascript:void(0);" onclick="movePage(1);" class="leftChevron button"></a>
 					<div class="artWrapper left clearfix">
 						<div class="avsnitt kontaktinfo">
@@ -130,8 +131,8 @@
 			$(window).resize(function() {
 				
 				setWindowDimensions();
-				setMargin();	
 				setHeight();
+				setMargin();
 				
 				/*Checker for stop resize*/
 				rtime = new Date();
@@ -180,7 +181,7 @@
 			
 			function isScrollbar() {
 				// Check if body height is higher than window height :)
-			    if (800 > $(window).height()) {
+			    if ($('#remse').height() > $(window).height()) {
 			        return true;
 			    } else {
 			    	return false;
@@ -188,9 +189,16 @@
 			}
 
 			function setHeight() {		
-				en.style.minHeight = hoyde + 'px';
-				to.style.minHeight = hoyde + 'px';
-				tre.style.minHeight = hoyde + 'px';
+				if ( $('#dritt').height() < $(window).height() ) {
+					en.style.height = hoyde + 'px';
+					to.style.height = hoyde + 'px';
+					tre.style.height = hoyde + 'px';
+				} else {
+					hoyde = $('#dritt').height();
+					en.style.height = hoyde + 'px';
+					to.style.height = hoyde + 'px';
+					tre.style.height = hoyde + 'px';
+				}
 			}
 
 			function setWindowDimensions() {
