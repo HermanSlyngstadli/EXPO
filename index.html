@@ -1,0 +1,199 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<title>Design EXPO 2017</title>
+		
+		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="remse">
+				<article id="1">
+					<a href="javascript:void(0);" onclick="movePage(1);" class="right button"></a>
+					<div class="artWrapper">
+						<div class="avsnitt">
+							<h2>Hva</h2>
+							<p>
+								Design EXPO arrangeres én uke i året, og tilbyr blant annet foredrag, workshops, meetups og utstillinger. Begivenheten er sentrert rundt et tema – RESHAPE – som handler om designerens rolle i formingen av et samfunn med konstant omstillingsbehov.
+							</p>
+						</div>
+						<div class="avsnitt">
+							<h2>Hvor og når?</h2>
+							<p>
+								Design EXPO finner sted i Trondheim fra 2. til 10. februar. Dato for foredragskavalkaden EXPOtalks er satt til 9. februar. De ulike arrangementene vil utspille seg i varierte lokaler rundt om på NTNU Gløshaugen. 
+							</p>
+						</div>
+						<div class="avsnitt">
+							<h2>Hvem?</h2>
+							<p>
+								Design EXPO arrangeres av studenter ved sivilingeniørutdanningen Industriell Design på NTNU. Universitetets studenter vil under Design EXPO konvergere med ledende designere, akademikere og bedrifter.
+							</p>
+						</div>
+						<div class="avsnitt">
+							<h2>Hvorfor?</h2>
+							<p>
+								Design EXPO ble skapt for å rette et søkelys mot design som løsningsverktøy og instrument for samfunnsendring. Vi ønsker å ha fokus på aktuelle problemstillinger og utfordringer vi står overfor som samfunn og designbransje, og med det frembringe nyanserte innspill som kan inspirere både studenter og bransjen for øvrig. 
+							</p>
+							<p>
+								Overskuddet fra Design EXPO går til en ekskursjon for 3. årstrinn ved Industriell Design. I 2017 går turen til Nepal, der studentene skal igangsette et arbeid for bedre søppelhåndtering i byen Pokhara. Prosjektet er i samarbeid med Tribhuvan University, og vil fortsette etter ekskursjonsgruppens involvering. 
+							</p>
+						</div>
+					</div>
+				</article>
+				<article id="2">
+					<div class="dato">6.-10. Februar</div>
+					<img class="logo" src="img/logo-stor.png" />
+					<header>
+						<ul class="nav clearfix">
+							<li><a href="javascript:void(0);" onclick="movePage(0);">Om Design EXPO</a></li>
+							<li>&nbsp; | &nbsp;</li>
+							<li><a href="javascript:void(0);" onclick="movePage(2);">Kontakt</a></li>
+						</ul>
+					</header>
+				</article>
+				<article id="3">
+					<a href="javascript:void(0);" onclick="movePage(1);" class="left button"></a>
+					<div class="artWrapper">
+						<div class="avsnitt kontaktinfo">
+							<img style="float:left;" src="img/leder.png">
+							<h2>Leder</h2>
+							<p>Ida Christine Opsahl (<a href="mailto:">ida@designexpo.no</a>)</p>
+						</div>
+						<div class="avsnitt kontaktinfo">
+							<img style="float:left;" src="img/bedrift.png">
+							<h2>Bedriftskontakt</h2>
+							<p>Sven-Erik Kaiser (<a href="mailto:sven@designexpo.no">sven@designexpo.no</a>)</p>
+						</div>
+						<div class="avsnitt kontaktinfo">
+							<img style="float:left;" src="img/arra.png">
+							<h2>Arrangement</h2>
+							<p>Petter Mustvedt (<a href="mailto:petter@designexpo.no">petter@designexpo.no</a>)</p>
+						</div>
+						<div class="avsnitt kontaktinfo">
+							<img style="float:left;" src="img/oko.png">
+							<h2>Økonomi</h2>
+							<p>Harald Larssen Lønning (<a href="mailto:harald@designexpo.no">harald@designexpo.no</a>)</p>
+						</div>
+						<div class="avsnitt kontaktinfo">
+							<img style="float:left;" src="img/pr.png">
+							<h2>Markedsføring</h2>
+							<p>Simen Kjendseth (<a href="mailto:simen@designexpo.no">simen@designexpo.no</a>)</p>
+						</div>
+						<div class="avsnitt kontaktinfo">
+							<img style="float:left;" src="img/peng.png">
+							<h2>Spons</h2>
+							<p>Sigurd Kalvik (<a href="mailto:sigurd@designexpo.no">sigurd@designexpo.no</a>)</p>
+						</div>
+					</div>
+				</article>
+				<div class="clear"></div>
+				<footer>2016 &copy; Designexpo.no. All rights reserved.</footer>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+
+			var remse = document.getElementById('remse');
+			var en = document.getElementById('1');
+			var to = document.getElementById('2');
+			var tre = document.getElementById('3');
+			
+			var currentPage = 1;
+			var pastMargin, currentMargin;
+			
+			var bredde = $(window).width();
+			var hoyde = $(window).height();
+
+			var isScrollbar = false;
+			
+			var marg = [0, -bredde, -2*bredde];
+			pastMargin = marg[currentMargin];
+
+			var rtime;
+			var timeout = false;
+			var delta = 200;
+			
+			en.style.minHeight = hoyde + 'px';
+			to.style.minHeight = hoyde + 'px';
+			tre.style.minHeight = hoyde + 'px';
+			$(window).onload = function() {
+				// Check if body height is higher than window height :)
+			    if ($("body").height() > $(window).height()) {
+			        isScrollbar = true;
+			    } else {
+			    	isScrollbar = false;
+			    }
+			}
+			
+			$(window).resize(function() {
+				bredde = $(window).width();
+				hoyde = $(window).height();
+				
+				marg = [0, -bredde, -2*bredde];				
+
+
+
+				en.style.minHeight = hoyde + 'px';
+				to.style.minHeight = hoyde + 'px';
+				tre.style.minHeight = hoyde + 'px';
+				
+				/*Checker for stop resize*/
+				rtime = new Date();
+				if (timeout === false) {
+					timeout = true;
+					setTimeout(resizeend, delta);
+				}
+			});
+			
+			$(document).keydown(function(e) {
+				switch(e.which) {
+					case 37: // left
+					if (currentPage > 0) {
+						currentPage--;
+						movePage(currentPage);
+					}
+					break;
+
+					case 39: // right
+					if (currentPage < 2) {
+						currentPage++;
+						movePage(currentPage);
+					}
+					break;
+
+					default: return; // exit this handler for other keys
+				}
+				e.preventDefault(); // prevent the default action (scroll / move caret)
+			});
+
+			function resizeend() {
+				if (new Date() - rtime < delta) {
+					setTimeout(resizeend, delta);
+				} else {
+					timeout = false;
+					movePage(currentPage);
+				}               
+			}
+			
+			function movePage(page) {
+				currentPage = page;
+				
+				$('#remse').animate(
+					{left: marg[page]}, 800, "swing");
+			}
+			
+			function checkIfScrollbar() {
+				// Check if body height is higher than window height :)
+			    if ($("body").height() > $(window).height()) {
+			        isScrollbar = true;
+			    }
+
+			    // Check if body width is higher than window width :)
+			    if ($("body").width() > $(window).width()) {
+			        isScrollbar = false;
+			    }
+			}
+		</script>
+	</body>
+</html>
