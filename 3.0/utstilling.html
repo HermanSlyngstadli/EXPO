@@ -49,36 +49,8 @@
 			</ul>
 		</nav>
 		<main class="main-wrapper">
-			<section class="col-md-12 col-xs-12 col-sm-12 full-page page-section header-page">
-				<a class="bait-pointer" id="chevron" href="javascript:void(0)">
-					
-				</a>
-			</section>
-
-			<!-- Sitat -->
-			<section class="col-md-12 col-xs-12 col-sm-12 page-section sitat" style="background-image:url('http://www.slyngstadli.no/herman/test/indusno/img/cecilie.png'); max-height:18rem; background-size:cover">
-				<div>
-					
-				</div>
-			</section>
-
-			<!-- Reshape -->
-			<section class="col-md-12 col-xs-12 col-sm-12 page-section">
-				<div class="col-md-2 col-xs-0 col-sm-0"></div>
-				<div class="col-md-8 col-xs-12 col-sm-12">
-					sdsd
-				</div>
-				<div class="col-md-2 col-xs-0 col-sm-0"></div>
-			</section>
-
-			<!-- Talks -->
-			<section class="col-md-12 col-xs-12 col-sm-12 page-section">
-				sdsd
-			</section>
-
-			<!-- Utstilling -->
-			<section class="col-md-12 col-xs-12 col-sm-12 page-section">
-				sdsd
+			<section class="page-section">
+				
 			</section>
 		</main>
 		<footer class="col-md-12 col-xs-12 col-xm-12">
@@ -98,18 +70,9 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/scrollTo.min.js"></script>
-		<script src="js/localscroll.min.js"></script>
 		<script type="text/javascript">
 			var navbar = document.getElementById('mainNav');
 			var navburger = document.getElementById('nav-burger');
-
-			var chevron = document.getElementById('chevron');
-
-			// Scrolle til artiklene
-			$(document).ready(function(){
-				$.localScroll();
-			});
 
 			function checkIfScrolledHeader() {
 				if(window.pageYOffset > 100 && navbar.classList[navbar.classList.length -1] != 'scrolled') {
@@ -133,18 +96,6 @@
 			document.getElementById('nav-burger').addEventListener('click', function() {
 				this.classList.toggle('open');
 			});
-
-			function scrollByHeader() {
-				var height = window.innerHeight;
-				window.scrollBy({ 
-					top: 100, // could be negative value
-					left: 0, 
-					behavior: 'smooth' 
-				});
-			}
-			chevron.onclick = function(){
-				scrollByHeader();
-			}
 		</script>
 	</body>
 </html>
