@@ -5,6 +5,7 @@
 
 	rød : #ff7b7b;
 	sjøgrønn : #00a79d;
+	lysgrønn: #46e088;
 
 
 */
@@ -353,8 +354,8 @@ hr {
 	text-align: center;
 }
 .les-mer {
-	
-	padding:5px 20px;
+	color:#fff;
+	padding:10px 40px;
 	border:2px solid #fff;
 	transition:background .2s ease;
 	position:absolute;
@@ -392,10 +393,6 @@ hr {
 
 	.les-mer {
 		float:none;
-		position:absolute;
-		left:50%;
-		transform:translateX(-50%);
-		margin:0 auto;
 		font-size:1.3em;
 		padding:10px 50px;
 	}
