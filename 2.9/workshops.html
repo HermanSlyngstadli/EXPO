@@ -7,12 +7,12 @@
 
 		<meta property="og:url"                content="http://designexpo.no" />
 		<meta property="og:type"               content="article" />
-		<meta property="og:title"              content="DesignEXPO 2017" />
+		<meta property="og:title"              content="Design EXPO 2017" />
 		<meta property="og:description"        content="Årets hendelse fra Industriell Design" />
-		<meta property="og:image"              content="http://www.designexpo.no/img/reshape-promo.png" />
+		<meta property="og:image"              content="http://www.designexpo.no/img/reshape-promo-ny.png" />
 		<meta property="og:image:type" content="image/png" />
-		<meta property="og:image:width" content="600" />
-		<meta property="og:image:height" content="109" />
+		<meta property="og:image:width" content="200" />
+		<meta property="og:image:height" content="200" />
 		
 		<title>DesignEXPO 2017</title>
 
@@ -22,6 +22,13 @@
 		<link rel="icon" href="img/favicon.png" type="image/png" sizes="128x128">
 
 		<style type="text/css">
+			h1 {
+				font-size: 10em;
+				text-align: center;
+				padding-bottom: 20px;
+				margin-bottom:0;
+			}
+
 			.page-section::before, .page-section::after {
 				display:none;
 			}
@@ -43,6 +50,111 @@
 			@media (max-width: 798px) {
 				.logo-holder {
 					height:150px;
+				}
+			}
+
+			.contact-article {
+				padding:10px;
+				min-height:450px;
+				/*background:#00a79d;*/
+				position: relative;
+			}
+			.contact-text {
+				height:100%;
+				color:#fff;
+			}
+			.contact-text  p {
+				font-size: 1.1em;
+				color:#fff;
+			}
+			.contact-image {
+				background-size:60%;
+				background-position: 90% 40%;
+			}
+			.contact-article h3 {
+				color:#00a79d;
+			}/*
+			.contact-article:nth-child(3), .contact-article:nth-child(2){
+				background:#0AC7BC;
+			}*/
+			@media (max-width: 991px) {
+				.contact-text  p {
+					font-size: 1.3em;
+				}
+				/*
+				.contact-article:nth-child(3), .contact-article:nth-child(2){
+				background:#00a79d;
+				}
+				.contact-article:nth-child(even){
+					background:#0AC7BC;
+				}*/
+			}
+			@media (max-width: 768px) {
+				h1 {
+					font-size: 5em;
+				}
+				h3 {
+					text-align: center;
+				}
+				.contact-article {
+					height:auto;
+					min-height: 300px;
+					margin-bottom:0px;
+
+				}
+				.contact-article:nth-child(even) {
+					background-color: #212222;
+				}
+				.contact-article .contact-image {
+					height:150px;
+				}
+				.contact-text {
+					height:400px;
+				}
+				.contact-text  p {
+					font-size: 1.2em;
+  					line-height: 1.5em;
+				}
+				.contact-image {
+				background-size:contain;
+				background-position: 50% 50%;
+				}
+			}
+			@media (max-width: 450px) {
+				.contact-article {
+					padding-bottom:30px;
+					margin-bottom:20px;
+				}
+				.contact-text {
+					/*height:460px;*/
+				}
+			}
+			.pamelding {
+				border:2px solid #00a79d;
+				color:#fff !important;
+				text-align: center;
+				font-size: 1.3em;
+				width:calc(100% - 20px);
+				padding:10px 0;
+				margin-top:15px;
+				margin-bottom:20px;
+				position: absolute;
+				bottom: 0;
+			}
+			.pamelding:hover {
+				background:#00a79d;
+				color:#fff;
+				text-decoration:none;
+			}
+			@media (max-width: 991px) {
+				.pamelding {
+					font-size: 1.2em;
+				}
+			}
+			@media (max-width: 768px) {
+				.pamelding {
+					position: static;
+
 				}
 			}
 		</style>
@@ -76,9 +188,77 @@
 				<li class="nav-element"><a href="index.html#kontakt" class="navbtn">kontakt</a></li>
 			</ul>
 		</nav>
-		<main class="main-wrapper">
-			<section class="col-md-12 col-xs-12 col-sm-12 page-section">
-				
+		<main class="main-wrapper" style="background:#212222;">
+			<h1>Workshops</h1>
+			<section class="col-md-12 col-xs-12 col-sm-12 page-section" style="padding-bottom:0; padding-top:0; background:#212222;">
+				<article class="col-md-6 col-sm-12 col-xs-12 contact-article"  id="itera">
+					<div class="col-md-5 col-sm-5 col-xs-12 contact-image" style="background-image:url('img/itera-logo-hvit.png')">
+						
+					</div>
+					<div class="col-md-7 col-sm-7 col-xs-12 contact-text">
+						<h2 class="col-md-12">Itera</h2>
+						<h3>Fredag 3.februar</h3>
+						<hr>
+						<p class="col-md-12">Itera er et kommunikasjons- og teknologiselskap som leverer rådgivning og strategi, design og utvikling, samt drift og forvaltning. De består av over 400 spesialister som jobber i fleksible team på tvers av fagområder, geografiske grenser, bransjer og samfunnssektorer. Kjerneverdiene 'nyskapende, lidenskapelig og kompetent' forteller kunder og ansatte hva de kan forvente av hverandre.</p>
+						<a href="https://www.eventbrite.com/e/workshop-med-itera-design-expo-2017-tickets-31478762827" class="pamelding col-md-12 col-xs-12 col-sm-12" target="_blank">Påmelding</a>
+					</div>
+				</article>
+
+
+				<article class="col-md-6 col-sm-12 col-xs-12 contact-article" id="netcompany">
+					<div class="col-md-5 col-sm-5 col-xs-12 contact-image" style="background-image:url('img/netcompany-logo-hvit.png')">
+						
+					</div>
+					<div class="col-md-7 col-sm-7 col-xs-12 contact-text">
+						<h2 class="col-md-12">Netcompany</h2>
+						<h3>Mandag 6.februar</h3>
+						<hr>
+						<p class="col-md-12">Netcompany er et av Nordens mest suksessrike IT-konsulentselskap. Vi leverer forretningskritiske IT-løsninger og rådgivning. Sammen med kundene realiserer vi morgendagens løsninger i det digitale landskapet, skapt via vårt innovative og kunnskapsbaserte fagmiljø.</p>
+						<a href="https://www.eventbrite.com/e/workshop-med-netcompany-design-expo-2017-tickets-31479069745" class="pamelding col-md-12 col-xs-12 col-sm-12" target="_blank">Påmelding</a>
+					</div>
+				</article>
+
+
+				<article class="col-md-6 col-sm-12 col-xs-12 contact-article" id="bekk">
+					<div class="col-md-5 col-sm-5 col-xs-12 contact-image" style="background-image:url('img/bekk-logo-hvit.png')">
+						
+					</div>
+					<div class="col-md-7 col-sm-7 col-xs-12 contact-text">
+						<h2 class="col-md-12">Bekk</h2>
+						<h3>Tirsdag 7.februar</h3>
+						<hr>
+						<p class="col-md-12">Bekk er et norsk selskap med 400 spesialister innen strategi, design og teknologi. Vi jobber med ​​​virksomheter som har ambisiøse mål og gir oss krevende utfordringer. Vi tror på smart bruk av teknologi, tverrfaglige team og evnen til å tenke annerledes. Det gjør oss i stand til å lage løsninger som utfordrer etablerte sannheter, og skape nye muligheter for våre kunder.</p>
+						<a href="https://www.eventbrite.com/e/workshop-med-bekk-design-expo-2017-tickets-31479124910" class="pamelding col-md-12 col-xs-12 col-sm-12" target="_blank">Påmelding</a>
+					</div>
+				</article>
+
+
+				<article class="col-md-6 col-sm-12 col-xs-12 contact-article"  id="makingwaves">
+					<div class="col-md-5 col-sm-5 col-xs-12 contact-image" style="background-image:url('img/makingwaves-logo-hvit.png')">
+						
+					</div>
+					<div class="col-md-7 col-sm-7 col-xs-12 contact-text">
+						<h2 class="col-md-12">Making Waves</h2>
+						<h3>Onsdag 8.februar</h3>
+						<hr>
+						<p class="col-md-12">Making Waves er eksperter på digital tjenesteutvikling og innovasjon. De har samlet rådgivning, design, teknologi, innholdsproduksjon og drift under samme tak. Making Waves er en digital innovasjonspartner for mange av Nordens største merkevarer og offentlige virksomheter.</p>
+						<a href="https://www.eventbrite.com/e/workshop-med-making-waves-design-expo-2017-tickets-31479133937" class="pamelding col-md-12 col-xs-12 col-sm-12" target="_blank">Påmelding</a>
+					</div>
+				</article>
+
+
+				<article class="col-md-6 col-sm-12 col-xs-12 contact-article" id="powel">
+					<div class="col-md-5 col-sm-5 col-xs-12 contact-image" style="background-image:url('img/powel-logo-hvit.png')">
+						
+					</div>
+					<div class="col-md-7 col-sm-7 col-xs-12 contact-text">
+						<h2 class="col-md-12">Powel</h2>
+						<h3>Fredag 10.februar</h3>
+						<hr>
+						<p class="col-md-12">Powel er en ledende leverandør av programvareløsninger til energiselskaper, entrepenører og offentlig sektor. De ble grunnlagt i Norge i 1996 og har siden vokst til å bli et internasjonalt konsern med over 400 ansatte og kontorer i sju land. CEO Bård Benum kommer for å snakke på EXPOtalks samme dag, og skal snakke om hvordan Powel bruker design i sitt arbeid.</p>
+						<a href="https://www.eventbrite.com/e/workshop-med-powel-design-expo-2017-tickets-31479148982" class="pamelding col-md-12 col-xs-12 col-sm-12" target="_blank">Påmelding</a>
+					</div>
+				</article>
 			</section>
 		</main>
 		<footer class="col-md-12 col-xs-12 col-xm-12">

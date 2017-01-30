@@ -5,7 +5,6 @@
 
 	rød : #ff7b7b;
 	sjøgrønn : #00a79d;
-	lysgrønn: #46e088;
 
 
 */
@@ -54,7 +53,7 @@ hr {
 	margin:0;
 }
 
-/*========== MAIN STYLING =============*/
+/*==========*/
 .main-wrapper {
 	padding-top: 80px; /*Height of navbar*/
 }
@@ -64,13 +63,6 @@ hr {
 	padding-top:80px;
 	min-height:26rem;
 	background: #00a79d;
-}
-.page-section.calender {
-	min-height:0;
-	padding:0;
-}
-.page-section.calender::after, .page-section.calender::before {
-	display:none;
 }
 .page-section::after {
 	content: '';
@@ -89,9 +81,8 @@ hr {
 .page-section:nth-child(odd) {
 	background:#212222;
 }
-.page-section:nth-child(5), .page-section:nth-child(5)::after {
+.page-section:nth-child(4), .page-section:nth-child(4)::after {
 	background:#ff7b7b;
-	font-size:1.3em;
 }
 .page-section::before {
 	content: '';
@@ -118,6 +109,11 @@ hr {
 .full-page {
 	height:79vh;
 	width:100vw;
+}
+@media (max-width:900px;) {
+	.les-mer {
+		width:100%;
+	}
 }
 /*===========NAV==========*/
 .mainNav {
@@ -332,39 +328,7 @@ hr {
 }
 
 
-/*============kalender===================================================================*/
-.calender-card {
-	padding-top:70px;
-	padding-left:10px;
-	padding-right:10px;
-	position:relative;
-}
-.calender-card::after {
-	content: '';
-	position:absolute;
-	height:100%;
-	width:100%;
-}
-.calender-card:nth-child(even) {
-	background:#0AC7BC;
-}
-.calender-card:nth-child(5) {
-	background:#ff7b7b;
-}
-.calender-card h3, .calender-card h2  {
-	float:none;
-	text-transform: none;
-}
-.calender-card h2 {
-	font-size: 1.7em;
-}
-
-@media (max-width: 991px) {
-	.calender-card {
-		padding-top:10px;
-	}
-}
-/*============spalter===================================================================*/
+/*============spalter*/
 .spalte {
 	padding-right:200px;
 	text-align: justify;
@@ -377,7 +341,7 @@ hr {
 	padding-right:0;
 }
 .spalte p {
-	font-size: 1.3em;
+	font-size: 1.1em;
 	line-height: 1.5em;
 	margin-bottom: 2em;
 	padding:0 20px;
@@ -388,23 +352,16 @@ hr {
 	text-align: center;
 }
 .les-mer {
-	color:#fff;
-	padding:10px 40px;
+	
+	padding:5px 10px;
+	margin-right:20px;
 	border:2px solid #fff;
 	transition:background .2s ease;
-	position:absolute;
-	left:calc(50% - 8.5px);
-	transform: translateX(-50%);
-	font-size:1.5em;
+	float:right;
 }
 .les-mer:hover {
 	background:#fff;
 	text-decoration:none;
-}
-@media (max-width:900px;) {
-	.les-mer {
-		width:100%;
-	}
 }
 @media (max-width:992px) {
 	.spalte {
@@ -432,6 +389,10 @@ hr {
 
 	.les-mer {
 		float:none;
+		position:absolute;
+		left:50%;
+		transform:translateX(-50%);
+		margin:0 auto;
 		font-size:1.3em;
 		padding:10px 50px;
 	}
@@ -455,9 +416,7 @@ hr {
 		background-size: calc(100% - 60px); 
 	}
 }
-
-
-/*==============kontakt article========================================================*/
+/*==============kontakt article*/
 .contact-article {
 	padding:40px;
 	float:left;
@@ -480,20 +439,14 @@ hr {
 	text-transform: uppercase;
 	margin-top:20px;
 }
-.contact-text a, .contact-text p {
-	color:#AD2D2D;
-}
 @media (max-width: 768px) {
 	.contact-article {
-		height:400px;
-		padding-top: 40px;
-		padding-bottom:20px;
-	}
-	.contact-article:nth-child(even) {
-		background: #FF9191;
+		height:300px;
+		margin-bottom:10em;
+		padding:10px;
 	}
 	.contact-image {
-		height:50%;
+		height:70%;
 	}
 	.contact-text {
 		padding-left:0;
@@ -502,18 +455,13 @@ hr {
 		text-align: center;
 	}
 	.contact-text h2 {
-		font-size: 2em;
+		font-size: 2.8em;
 	}
 	.contact-text p {
-		font-size: 1.3em;
-	}
-	.page-section:nth-child(5), .page-section:nth-child(5)::after {
-		background: #FF9191;
+		font-size: 2em;
 	}
 }
-
-
-/*============ footer ====================================*/
+/*============ footer */
 footer {
 	background:rgb(29,29,29);
 	position:relative;
