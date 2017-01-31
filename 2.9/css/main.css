@@ -298,16 +298,32 @@ hr {
 	margin:0 auto;
 	text-indent: -9999px;
 	width: 100%;
-	height: 70%;
+	height: 40%;
 	background: url("../img/reshapeFRESH_02.svg");
 	background-size: 1000px calc(100%);
-	background-position: 50% -60px;
+	background-position: 50% -10px;
 	background-repeat: no-repeat;
+}
+.powel-logo {
+	width:100%;
+	height:30%;
+	position:relative;
+	top:0;
+}
+.powel-logo p {	
+	font-size: 1.3em;
+	font-family: "Raleway", sans-serif;
+	color:#fff;
+	font-weight: 300;
+	text-align: center;
+}
+.sponsor-break {
+	display: none;
 }
 @media (max-width: 1200px) {
 	.reshape-logo {
 		background-size: calc(100% - 300px) calc(100%);
-		background-position: 50% calc(100% - 100px);
+		background-position: 50% calc(100%);
 	}
 }
 @media (max-width:768px) {
@@ -324,6 +340,10 @@ hr {
 	}
 	.reshape-logo, #omexpo .expo-logo {
 		background-size: calc(100% - 60px) !important;
+		background-position: 50% 60px;
+	}
+	.sponsor-break {
+		display: block;
 	}
 }
 #omexpo .expo-logo {
@@ -338,6 +358,8 @@ hr {
 	padding-left:10px;
 	padding-right:10px;
 	position:relative;
+	transition: color .2s ease;
+	color:#fff;
 }
 .calender-card::after {
 	content: '';
@@ -517,7 +539,7 @@ hr {
 footer {
 	background:rgb(29,29,29);
 	position:relative;
-	padding-bottom:100px !important;
+	padding-bottom:120px !important;
 }
 .footer-section {
 	height:400px;
@@ -536,10 +558,26 @@ footer {
 	position:absolute;
 	bottom:0;
 	height:100px;
-	padding:43px;
 }
 .footer-copy {
 	float:right;
+	padding-top:33px;
+	padding-right:20px;
+}
+.footer-logo {
+	float:left;
+	padding-left:20px;
+	padding-top:33px;
+}
+.footer-logo a:nth-child(2) {
+	margin-left:40px;
+}
+.footer-logo a img {
+	height:20px;
+	width:auto;
+}
+.footer-logo a:nth-child(1) img {
+	height:30px;
 }
 .footer-bottom ul {
 	float:left;
@@ -550,10 +588,10 @@ footer {
 }
 @media (max-width:768px) {
 	.footer-bottom {
-		height:100px;
+		height:300px;
 	}
 	footer {
-		padding-bottom:100px !important;
+		padding-bottom:300px !important;
 	}
 	.footer-bottom ul  {
 		height:100px;
@@ -567,6 +605,18 @@ footer {
 	.footer-copy {
 		text-align:center;
 		font-size: .8em;
+		width:100%;
+	}
+	.footer-logo {
+		float:none;
+		padding-left:0;
+	}
+	.footer-logo a:nth-child(2) {
+		margin:0;
+	}
+	.footer-logo a {
+		display: block;
+		text-align: center;
 		width:100%;
 	}
 }
