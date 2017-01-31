@@ -579,6 +579,9 @@ footer {
 .footer-logo a:nth-child(1) img {
 	height:30px;
 }
+.footer-logo a:nth-child(2) img {
+	margin-bottom:2px;
+}
 .footer-bottom ul {
 	float:left;
 	list-style-type:none;
@@ -589,6 +592,10 @@ footer {
 @media (max-width:768px) {
 	.footer-bottom {
 		height:300px;
+	}
+	.footer-bottom-inner {
+		height: 300px;
+		position:relative;
 	}
 	footer {
 		padding-bottom:300px !important;
@@ -606,13 +613,19 @@ footer {
 		text-align:center;
 		font-size: .8em;
 		width:100%;
+		position:absolute;
+		bottom:30px;
+		padding-right:0;
+		color:#ccc;
 	}
 	.footer-logo {
 		float:none;
 		padding-left:0;
+		margin-top:30px;
 	}
 	.footer-logo a:nth-child(2) {
-		margin:0;
+		margin-top:50px;
+		margin-left:0;
 	}
 	.footer-logo a {
 		display: block;
